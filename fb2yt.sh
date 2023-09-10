@@ -20,11 +20,6 @@ echo "Facebook Link: $facebook_link"
 echo "Youtube Title: $youtube_title"
 echo "Youtube Description: $youtube_description"
 
-# Setup working directory
-#rm -rf ./fb2yt-working-directory
-#mkdir ./fb2yt-working-directory
-#cd ./fb2yt-working-directory
-
 # Download from Facebook
 echo ""
 echo -e "${BLUE}STEP 1 - Download video from Facebook ...${RESET}"
