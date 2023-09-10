@@ -45,7 +45,11 @@ echo ""
 echo -e "${BLUE}STEP 3 - Upload video to YouTube ...${RESET}"
 echo ""
 sleep 2
-./youtubeuploader -title="$youtube_title" -description="$youtube_description" -filename "fbvideo_louder.mp4"
+./youtubeuploader \
+  -title="$youtube_title" \
+  -description="$youtube_description" \
+  -privacy public \
+  -filename fbvideo_louder.mp4
 
 # Attempt to make CD
 echo ""
