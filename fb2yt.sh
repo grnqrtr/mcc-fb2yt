@@ -21,9 +21,9 @@ echo "Youtube Title: $youtube_title"
 echo "Youtube Description: $youtube_description"
 
 # Setup working directory
-rm -rf /tmp/fb2yt-working-directory
-mkdir /tmp/fb2yt-working-directory
-cd /tmp/fb2yt-working-directory
+#rm -rf ./fb2yt-working-directory
+#mkdir ./fb2yt-working-directory
+#cd ./fb2yt-working-directory
 
 # Download from Facebook
 echo ""
@@ -45,12 +45,7 @@ echo ""
 echo -e "${BLUE}STEP 3 - Upload video to YouTube ...${RESET}"
 echo ""
 sleep 2
-youtube-upload \
-  --client-secrets="$HOME/.youtube-upload/client_secrets.json" \
-  --credentials-file="$HOME/.youtube-upload/youtube-upload-credentials.json" \
-  --title="$youtube_title" \
-  --description="$youtube_description" \
-  fbvideo_louder.mp4
+./youtubeuploader -title="$youtube_title" -description="$youtube_description" -filename "fbvideo_louder.mp4"
 
 # Attempt to make CD
 echo ""
@@ -64,8 +59,11 @@ eject /dev/sr0
 echo ""
 echo -e "${GREEN}FINISHED.${RESET}"
 echo ""
-echo -e "${YELLOW}Press any key to exit ...${RESET}"
+echo -e "${YELLOW}Press any key to clear files and exit ...${RESET}"
 read -n 1 -s
+rm cdaudio.mp3
+rm fbvideo.mp4
+rm fbvideo_louder.mp4
 exit
 ;;
 
