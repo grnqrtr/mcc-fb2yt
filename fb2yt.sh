@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Check for updates
+yt-dlp --update-to nightly
+
 # Define color escape sequences
 GREEN="\033[0;32m"
 RED="\033[0;31m"
